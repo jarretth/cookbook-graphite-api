@@ -12,6 +12,5 @@ supports 'debian'
 supports 'ubuntu'
 
 depends 'build-essential'
-depends 'python'
 depends 'packagecloud'
 depends 'python'
