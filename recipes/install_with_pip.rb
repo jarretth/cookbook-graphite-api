@@ -15,8 +15,22 @@ file node['graphite_api']['search_index'] do
   action :create_if_missing
 end
 
-%w(libcairo2-dev libffi-dev).each do |pkg|
-  package pkg
+package 'Cairo Devel' do
+  case node[:platform]
+    when 'redhat', 'centos'
+      package_name 'cairo-devel'
+    when 'ubuntu', 'debian'
+      package_name 'libcairo-dev'
+    end
+end
+
+package 'Libffi' do
+  case node[:platform]
+    when 'redhat', 'centos'
+      package_name 'libffi-devel'
+    when 'ubuntu', 'debian'
+      package_name 'libffi-dev'
+    end
 end
 
 %w(gunicorn graphite-api).each do |pkg|
