@@ -22,7 +22,6 @@ when 'rhel'
     default['graphite_api']['gunicorn_path'] = '/usr/bin/gunicorn'
 end
 
-default['graphite_api']['gunicorn_path'] = '/usr/local/bin/gunicorn'
 default['graphite_api']['gunicorn_workers'] = 1
 default['graphite_api']['bind_address'] = '0.0.0.0'
 default['graphite_api']['bind_port'] = 8888
