@@ -10,6 +10,8 @@ recipe 'graphite-api', 'Installs graphite-api.'
 
 supports 'debian'
 supports 'ubuntu'
+supports 'centos'
+supports 'redhat'
 
 depends 'build-essential'
 depends 'python'
