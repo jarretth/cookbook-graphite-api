@@ -12,7 +12,7 @@
 PIDFILE=/var/run/graphite-api.pid
 LOGFILE=/var/log/graphite-api.log
 
-SCRIPT="/usr/local/bin/gunicorn graphite_api.app:app -b 0.0.0.0:8888 --access-logfile \"$LOGFILE\" --error-logfile \"$LOGFILE\""
+SCRIPT="<%= node['graphite_api']['gunicorn_path'] %> graphite_api.app:app -b <%= node['graphite_api']['bind_address'] %>:<%= node['graphite_api']['bind_port'] %> --access-logfile \"$LOGFILE\" --error-logfile \"$LOGFILE\" --workers <%= node['graphite_api']['gunicorn_workers'] %>"
 
 RUNAS=root
 
